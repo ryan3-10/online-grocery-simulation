@@ -1,0 +1,57 @@
+    The below tests were written into the main() function in groveries.cpp. 
+    Once all tests passed, I removed them so that the program could run normally.
+    
+    ------------------------------------------------------------------------------
+    
+    //Test list sizes
+    assert(customerList.size() == 300);
+    assert(itemList.size() == 198);
+
+    //Test customer ID searchess
+    assert(customerList[findCustomerIndex(715608)].name         == "Vergil Heelis");
+    assert(customerList[findCustomerIndex(821906)].address      == "566 Washington Drive");
+    assert(customerList[findCustomerIndex(569938)].city         == "San Diego");
+    assert(customerList[findCustomerIndex(308576)].state        == "NC");
+    assert(customerList[findCustomerIndex(801129)].zipCode      == "98158");
+    assert(customerList[findCustomerIndex(768030)].phoneNumber  == "217-795-2067");
+    assert(customerList[findCustomerIndex(810003)].emailAddress == "kantonikov0@4shared.com");
+    assert(customerList[findCustomerIndex(908495)].name         == "Belia Wyles");
+    assert(customerList[findCustomerIndex(827196)].address      == "09 Sullivan Avenue");
+    assert(customerList[findCustomerIndex(363220)].city         == "Sioux City");
+    assert(customerList[findCustomerIndex(610440)].state        == "NC");
+    assert(customerList[findCustomerIndex(915895)].zipCode      == "80905");
+    assert(customerList[findCustomerIndex(759795)].phoneNumber  == "202-278-3687");
+    assert(customerList[findCustomerIndex(753192)].emailAddress == "dsarfas1f@privacy.gov.au");
+    
+    //Test item ID searches
+    assert(itemList[findItemIndex(57464)].description == "Almonds Ground Blanched");
+    assert(itemList[findItemIndex(23022)].price       == 5.00);
+    assert(itemList[findItemIndex(62702)].description == "Breakfast Quesadillas");
+    assert(itemList[findItemIndex(47971)].price       == 1.98);
+    assert(itemList[findItemIndex(16736)].description == "Wine - Red Cooking");
+    assert(itemList[findItemIndex(52431)].price       == 1.49);
+    assert(itemList[findItemIndex(52431)].description == "Yogurt - Peach 175 Gr");
+
+    //Test invalid customer ID
+    assert(findCustomerIndex(0)      == -1);
+    assert(findCustomerIndex(827197) == -1);
+    assert(findCustomerIndex(9999)   == -1);
+    assert(findCustomerIndex(400)    == -1);
+    assert(findCustomerIndex(4560)   == -1);
+
+    //Test invalid item ID
+    assert(findItemIndex(0)      == -1);
+    assert(findItemIndex(827197) == -1);
+    assert(findItemIndex(9999)   == -1);
+    assert(findItemIndex(400)    == -1);
+    assert(findItemIndex(4560)   == -1);
+
+    //Test sub_total
+    LineItem test1(57464, 3);
+    LineItem test2(23242, 5);
+    LineItem test3(55222, 10);
+    assert(test1.sub_total() == 8.97);
+    assert(test2.sub_total() == 4.45);
+    assert(test3.sub_total() == 2.39 * 10);
+
+    cout << "All tests passesd" << endl;
